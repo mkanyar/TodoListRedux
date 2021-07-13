@@ -1,26 +1,39 @@
 .container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 .addTodoContainer {
   display: flex;
-  align-items: center;
   flex-direction: column;
 }
-.addButton {
+.visibilityFilterContainer {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: baseline;
+  flex-direction: row;
+  justify-content: space-around;
 }
+.visibilityFilter {
+  display: inline;
+}
+.todoListContainer {
+  display: flex;
+  align-self: start;
+}
+.title {
+  margin-left: 24px;
+}
+
 .addTodo {
   display: flex;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   gap: 10px;
 }
 body {
   width: 100vw;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
