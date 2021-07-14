@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
+import { connect } from "react-redux";
+import { addTodo } from "../redux/actions";
 
-export const AddToDo = () => {
+const AddToDo = ({ addTodo }) => {
+  const [input, setInput] = useState("");
+  const handleAdd = () => {};
   return (
     <div className="addTodoContainer">
       {" "}
@@ -12,3 +16,5 @@ export const AddToDo = () => {
     </div>
   );
 };
+
+export default connect(null, { addTodo })(AddToDo);
