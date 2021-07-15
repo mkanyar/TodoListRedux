@@ -4,14 +4,30 @@ import { addTodo } from "../redux/actions";
 
 const AddToDo = ({ addTodo }) => {
   const [input, setInput] = useState("");
-  const handleAdd = () => {};
+  const handleChange = (event) => {
+    setInput(event.target.value);
+  };
+  const handleAdd = (event) => {
+    addTodo(input);
+
+    console.log("added ", input);
+    setInput("");
+  };
+
   return (
     <div className="addTodoContainer">
       {" "}
       <h1 className="title">TodoList</h1>
       <div className="addTodo">
-        <input type="text" />
-        <button className="addButton">Add to do</button>
+        <input type="text" onChange={handleChange} />
+        <button
+          className="addButton"
+          type="reset"
+          onClick={handleAdd}
+          value={input}
+        >
+          Add to do
+        </button>
       </div>
     </div>
   );

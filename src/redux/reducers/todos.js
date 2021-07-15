@@ -1,10 +1,25 @@
 import { ADD_TODO } from "../actionTypes";
 
-export const todos = (state, action) => {
+const initialState = {
+  allIds: [],
+  byId: {},
+};
+
+export const todos = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TODO:
-      return action.payload;
+      const { content, id } = action.payload;
+      return {
+        ...state,
+        allIds: [...state.allIds, id],
+        byId: {
+          ...state.byId,
+          [id]: {
+            content,
+          },
+        },
+      };
     default:
-      return null;
+      return state;
   }
 };
