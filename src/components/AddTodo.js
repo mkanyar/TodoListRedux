@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { connect } from "react-redux";
 import { addTodo } from "../redux/actions";
 
@@ -10,6 +10,7 @@ const AddToDo = ({ addTodo }) => {
   };
 
   const handleAdd = (event) => {
+    if (!input) return;
     addTodo(input);
     setInput("");
     console.log("added ", input);
