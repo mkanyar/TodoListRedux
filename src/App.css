@@ -17,12 +17,19 @@
 .visibilityFilter {
   display: inline;
 }
+ul {
+  height: 0px;
+}
 .todoListContainer {
   display: flex;
   align-self: start;
+  flex-direction: column;
 }
 .title {
   margin-left: 24px;
+}
+.completed {
+  text-decoration: line-through;
 }
 
 .addTodo {

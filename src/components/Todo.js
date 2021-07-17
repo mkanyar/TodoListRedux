@@ -1,11 +1,21 @@
 import React from "react";
+import { connect } from "react-redux";
+import { toggleTodo } from "../redux/actions";
 
-export const Todo = ({ todos }) => {
+const Todo = ({ todo, toggleTodo }) => {
+  console.log("todo id", todo.id);
+
   return (
     <ul>
-      {todos.map((todo) => (
-        <li>{todo.content}</li>
-      ))}
+      <li
+        onClick={() => toggleTodo(todo.id)}
+        className={`${todo && todo.completed && "completed"} `}
+      >
+        {todo && todo.completed ? "👌" : "👋"}
+        {todo && todo.content}
+      </li>
     </ul>
   );
 };
+
+export default connect(null, { toggleTodo })(Todo);

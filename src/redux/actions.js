@@ -1,4 +1,4 @@
-import { ADD_TODO } from "./actionTypes";
+import { ADD_TODO, TOGGLE_TODO } from "./actionTypes";
 
 let id = 0;
 
@@ -7,5 +7,12 @@ export const addTodo = (content) => ({
   payload: {
     id: ++id,
     content,
+  },
+});
+
+export const toggleTodo = (id) => ({
+  type: TOGGLE_TODO,
+  payload: {
+    id,
   },
 });

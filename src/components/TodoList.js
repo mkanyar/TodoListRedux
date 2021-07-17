@@ -1,12 +1,14 @@
 import React from "react";
-import { Todo } from "./Todo";
+import Todo from "./Todo";
 import { connect } from "react-redux";
 import { getById } from "../redux/selectors";
 
 const TodoList = ({ todos }) => {
   return (
     <div className="todoListContainer">
-      <Todo todos={todos} />
+      {todos.map((todo) => (
+        <Todo todo={todo} />
+      ))}
     </div>
   );
 };
