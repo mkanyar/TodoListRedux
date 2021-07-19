@@ -1,11 +1,28 @@
 import React from "react";
+import { connect } from "react-redux";
+import { visibilityFilters } from "../constants";
+import { visibilityFilter } from "../redux/actions";
 
-export const VisibilityFilters = () => {
+const VisibilityFilters = ({ activeFilter, visibilityFilter }) => {
   return (
     <div className="visibilityFilterContainer">
-      {["All", "Completed", "Incomplete"].map((visibilityFilter) => (
-        <span className="visibilityFilter">{visibilityFilter}</span>
+      {visibilityFilters.map((filter) => (
+        <span
+          className={`${activeFilter === filter && "visibilityFilter"}`}
+          onClick={() => visibilityFilter(filter)}
+        >
+          {filter}
+        </span>
       ))}
     </div>
   );
 };
+
+const mapStateToProps = (state) => {
+  const activeFilter = state.visibilityFilters.filter;
+  return { activeFilter };
+};
+
+export default connect(mapStateToProps, { visibilityFilter })(
+  VisibilityFilters
+);

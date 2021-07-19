@@ -13,7 +13,6 @@ const AddToDo = ({ addTodo }) => {
     if (!input) return;
     addTodo(input);
     setInput("");
-    console.log("added ", input);
   };
 
   return (
@@ -22,7 +21,7 @@ const AddToDo = ({ addTodo }) => {
       <h1 className="title">TodoList</h1>
       <div className="addTodo">
         <input type="text" onChange={handleChange} value={input} />
-        <button className="addButton" onClick={handleAdd}>
+        <button className="addButton" onClick={handleAdd} type="submit">
           Add to do
         </button>
       </div>

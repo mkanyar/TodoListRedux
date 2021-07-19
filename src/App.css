@@ -15,10 +15,11 @@
   justify-content: space-between;
 }
 .visibilityFilter {
-  display: inline;
+  border-bottom: 1px solid blue;
 }
 ul {
-  height: 0px;
+  margin: 0;
+  padding-left: 14px;
 }
 .todoListContainer {
   display: flex;

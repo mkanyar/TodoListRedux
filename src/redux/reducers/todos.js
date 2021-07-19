@@ -25,7 +25,7 @@ export const todos = (state = initialState, action) => {
 
     case TOGGLE_TODO: {
       const { id } = action.payload;
-      console.log("toggle todo", id);
+
       return {
         ...state,
         byId: {

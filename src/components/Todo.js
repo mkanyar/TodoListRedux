@@ -3,16 +3,14 @@ import { connect } from "react-redux";
 import { toggleTodo } from "../redux/actions";
 
 const Todo = ({ todo, toggleTodo }) => {
-  console.log("todo id", todo.id);
-
   return (
     <ul>
       <li
         onClick={() => toggleTodo(todo.id)}
-        className={`${todo && todo.completed && "completed"} `}
+        className={`${todo.completed && "completed"} `}
       >
-        {todo && todo.completed ? "👌" : "👋"}
-        {todo && todo.content}
+        {todo.completed ? "👌" : "👋"}
+        {todo.content}
       </li>
     </ul>
   );
